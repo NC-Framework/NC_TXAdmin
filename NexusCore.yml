@@ -8,7 +8,7 @@ description: A custom framework for FiveM including essential resources and cust
 tasks:
   # Download Base Files
   - action: download_github
-    src: https://github.com/yourname/custom-framework-repo
+    src: https://github.com/NC-Framework/NC_TXAdmin
     ref: main
     dest: ./tmp/ncframework.sql
 
