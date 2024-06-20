@@ -26,11 +26,11 @@ tasks:
     file: ./tmp/ncframework/ncframework.sql
 
   # Standalone Dependencies
-   - action: download_github
+  - action: download_github
     src: https://github.com/citizenfx/cfx-server-data
     subpath: resources
     dest: ./resources/[cfx-default]
-    
+
   - action: download_file
     path: ./tmp/files/oxmysql.zip
     url: https://github.com/overextended/oxmysql/releases/download/v2.9.1/oxmysql.zip
