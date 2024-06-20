@@ -10,20 +10,20 @@ tasks:
   - action: download_github
     src: https://github.com/NC-Framework/NC_TXAdmin
     ref: main
-    dest: ./tmp/ncframework.sql
+    dest: ./tmp/ncframework
 
   - action: move_path
-    src: ./tmp/ncframework.sql/server.cfg
+    src: ./tmp/ncframework/server.cfg
     dest: ./server.cfg
 
   - action: move_path
-    src: ./tmp/ncframework.sql/myLogo.png
+    src: ./tmp/ncframework/myLogo.png
     dest: ./myLogo.png
 
   # Prepare Database
   - action: connect_database
   - action: query_database
-    file: ./tmp/ncframework.sql/ncframework.sql
+    file: ./tmp/ncframework/ncframework.sql
 
   # Standalone Dependencies
   - action: download_file
