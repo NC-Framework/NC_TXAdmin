@@ -10,20 +10,20 @@ tasks:
   - action: download_github
     src: https://github.com/yourname/custom-framework-repo
     ref: main
-    dest: ./tmp/custom-framework
+    dest: ./tmp/ncframework.sql
 
   - action: move_path
-    src: ./tmp/custom-framework/server.cfg
+    src: ./tmp/ncframework.sql/server.cfg
     dest: ./server.cfg
 
   - action: move_path
-    src: ./tmp/custom-framework/myLogo.png
+    src: ./tmp/ncframework.sql/myLogo.png
     dest: ./myLogo.png
 
   # Prepare Database
   - action: connect_database
   - action: query_database
-    file: ./tmp/custom-framework/custom-framework.sql
+    file: ./tmp/ncframework.sql/ncframework.sql
 
   # Standalone Dependencies
   - action: download_file
@@ -42,70 +42,29 @@ tasks:
 
   # Download custom standalone resources
   - action: download_github
-    dest: ./resources/[standalone]/custom_resource1
-    ref: main
-    src: https://github.com/yourname/custom_resource1
-
-  - action: download_github
-    dest: ./resources/[standalone]/custom_resource2
-    ref: main
-    src: https://github.com/yourname/custom_resource2
-
-  - action: download_github
-    dest: ./resources/[standalone]/custom_resource3
-    ref: main
-    src: https://github.com/yourname/custom_resource3
+    dest: ./resources/[standalone]/screenshot-basic
+    ref: master
+    src: https://github.com/citizenfx/screenshot-basic
 
   # Prevent GitHub throttling
   - action: waste_time
     seconds: 10
 
+  # VOICE
+  - action: download_github
+    dest: ./resources/[voice]/pma-voice
+    ref: main
+    src: https://github.com/AvarianKnight/pma-voice
+
+
   # Download custom framework resources
-  - action: download_github
-    dest: ./resources/[custom]/custom-core
-    ref: main
-    src: https://github.com/yourname/custom-core
-
-  - action: download_github
-    dest: ./resources/[custom]/custom-module1
-    ref: main
-    src: https://github.com/yourname/custom-module1
-
-  - action: download_github
-    dest: ./resources/[custom]/custom-module2
-    ref: main
-    src: https://github.com/yourname/custom-module2
-
-  - action: download_github
-    dest: ./resources/[custom]/custom-module3
-    ref: main
-    src: https://github.com/yourname/custom-module3
-
-  - action: download_github
-    dest: ./resources/[custom]/custom-module4
-    ref: main
-    src: https://github.com/yourname/custom-module4
-
+ 
   # Prevent GitHub throttling
   - action: waste_time
     seconds: 10
 
   # Additional custom resources
-  - action: download_github
-    dest: ./resources/[custom]/custom-feature1
-    ref: main
-    src: https://github.com/yourname/custom-feature1
-
-  - action: download_github
-    dest: ./resources/[custom]/custom-feature2
-    ref: main
-    src: https://github.com/yourname/custom-feature2
-
-  - action: download_github
-    dest: ./resources/[custom]/custom-feature3
-    ref: main
-    src: https://github.com/yourname/custom-feature3
-
+  
   # Prevent GitHub throttling
   - action: waste_time
     seconds: 10
